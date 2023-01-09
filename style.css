@@ -100,3 +100,21 @@ body {
   color: hsl(200, 100%, 20%);
   margin-top: 0.5rem;
 }
+
+.hour-table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+.hour-table-row {
+  background-color: hsl(200, 80%, 75%);
+}
+
+.hour-table-row:nth-child(even) {
+  background-color: hsl(200, 80%, 70%);
+}
+
+.hour-table-row > td {
+  padding: 0.25rem 0.5rem;
+}
