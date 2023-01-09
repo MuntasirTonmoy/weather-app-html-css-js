@@ -15,6 +15,11 @@ body {
   font-family: sans-serif;
 }
 
+.blured {
+  filter: blur(0.1875rem);
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -66,4 +71,9 @@ body {
   font-weight: bold;
   font-size: 0.6rem;
   color: hsl(200, 100%, 20%);
+}
+
+.value-sub-info {
+  font-weight: lighter;
+  font-size: 0.75rem;
 }
