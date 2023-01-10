@@ -34,7 +34,7 @@ function parsCurrentWeather({ current_weather, daily }) {
     temperature_2m_min: [minTemp],
     apparent_temperature_max: [maxFeelsLike],
     apparent_temperature_min: [minFeelsLike],
-    precipitation: [precip],
+    precipitation_sum: [precip],
   } = daily;
   return {
     currentTemp: Math.round(currentTemp),
