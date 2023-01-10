@@ -17,8 +17,8 @@ export function getWeather(lat, lon, timezone) {
     .then(({ data }) => {
       return {
         current: parsCurrentWeather(data),
-        daily: parsDailyWeather(data),
-        hourly: parsHourlyWeather(data),
+        /* daily: parsDailyWeather(data),
+        hourly: parsHourlyWeather(data), */
       };
     });
 }
@@ -37,13 +37,13 @@ function parsCurrentWeather({ current_weather, daily }) {
     precipitation: [precip],
   } = daily;
   return {
-    currentTemp,
-    highTemp: maxTemp,
-    lowTemp: minTemp,
-    highFL: maxFeelsLike,
-    lowFL: minFeelsLike,
-    windSpeed,
-    precip,
+    currentTemp: Math.round(currentTemp),
+    highTemp: Math.round(maxTemp),
+    lowTemp: Math.round(minTemp),
+    highFL: Math.round(maxFeelsLike),
+    lowFL: Math.round(minFeelsLike),
+    windSpeed: Math.round(windSpeed),
+    precip: Math.round(precip * 100) / 100,
     icon,
   };
 }
