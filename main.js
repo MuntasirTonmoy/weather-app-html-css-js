@@ -11,6 +11,7 @@ getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
 function renderWeather({ current, daily, hourly }) {
   renderCurrentWeather(current);
   renderDailyWeather(daily);
+  renderHourlyWeather(hourly);
   document.body.classList.remove("blurred");
 }
 
@@ -47,3 +48,7 @@ function renderDailyWeather(daily) {
     daySection.append(elm);
   });
 }
+
+const hourTableSection = document.querySelector("[data-hour-table]");
+const hourTableRowTemplate = document.querySelector(".hour-table-row-template");
+const HOUR_FORMATTER = new Intl.DateTimeFormat(undefined, { hour: "numeric" });
