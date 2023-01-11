@@ -10,6 +10,7 @@ getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
 
 function renderWeather({ current, daily, hourly }) {
   renderCurrentWeather(current);
+  renderDailyWeather(daily);
   document.body.classList.remove("blurred");
 }
 
@@ -32,3 +33,5 @@ function renderCurrentWeather(current) {
   setValue("current-precip", current.windSpeed);
   setValue("current-precip", current.precip);
 }
+
+function renderDailyWeather(daily) {}
