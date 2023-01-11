@@ -34,4 +34,16 @@ function renderCurrentWeather(current) {
   setValue("current-precip", current.precip);
 }
 
-function renderDailyWeather(daily) {}
+const daySection = document.querySelector("[data-day-section]");
+const dayCardTemplate = document.querySelector(".day-card-template");
+const DAY_FORMATTER = new Intl.DateTimeFormat(undefined, { weekday: "long" }); //todo
+function renderDailyWeather(daily) {
+  daySection.innerHTML = "";
+  daily.forEach(day => {
+    const elm = dayCardTemplate.content.cloneNode(true); //todo
+    setValue("temp", day.maxTemp, { parent: elm });
+    setValue("date", DAY_FORMATTER.format(day.timestamp), { parent: elm });
+    elm.querySelector("[data-icon]").src = getIconURL(day.iconCode);
+    daySection.append(elm);
+  });
+}
