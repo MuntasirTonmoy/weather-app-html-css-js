@@ -1,3 +1,4 @@
+import { ICON_MAP } from "./iconMap";
 import { getWeather } from "./weather";
 
 getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -17,10 +18,12 @@ function setValue(selector, value) {
 }
 
 function getIconURL(iconCode) {
-  return `icons/${iconCode}.svg`;
+  return `icons/${ICON_MAP.get(iconCode)}.svg`;
 }
 
+const currentIcon = document.querySelector("[data-current-icon]");
 function renderCurrentWeather(current) {
+  currentIcon.src = getIconURL(current.icon);
   setValue("current-temp", current.currentTemp);
   setValue("current-high", current.highTemp);
   setValue("current-low", current.lowTemp);
