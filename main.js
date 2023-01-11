@@ -16,6 +16,10 @@ function setValue(selector, value) {
   document.querySelector(`[data-${selector}]`).textContent = value;
 }
 
+function getIconURL(iconCode) {
+  return `icons/${iconCode}.svg`;
+}
+
 function renderCurrentWeather(current) {
   setValue("current-temp", current.currentTemp);
   setValue("current-high", current.highTemp);
