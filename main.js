@@ -12,7 +12,10 @@ function renderWeather({ current, daily, hourly }) {
   document.body.classList.remove("blurred");
 }
 
+function setValue(selector, value) {
+  document.querySelector(`[data-${selector}]`).textContent = value;
+}
+
 function renderCurrentWeather(current) {
-  document.querySelector("[data-current-temp]").textContent =
-    current.currentTemp;
+  setValue("current-temp", current.currentTemp);
 }
