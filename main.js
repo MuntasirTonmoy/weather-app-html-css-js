@@ -49,6 +49,20 @@ function renderDailyWeather(daily) {
   });
 }
 
-const hourTableSection = document.querySelector("[data-hour-table]");
+const hourTableSection = document.querySelector("[data-hour-section]");
 const hourTableRowTemplate = document.querySelector(".hour-table-row-template");
 const HOUR_FORMATTER = new Intl.DateTimeFormat(undefined, { hour: "numeric" });
+function renderHourlyWeather(hourly) {
+  hourTableSection.innerHTML = "";
+  hourly.forEach(hour => {
+    const elm = hourTableRowTemplate.content.cloneNode(true); //todo
+    setValue("temp", hour.temp, { parent: elm });
+    setValue("fl-temp", hour.feelsLike, { parent: elm });
+    setValue("wind", hour.windSpeed, { parent: elm });
+    setValue("precip", hour.precip, { parent: elm });
+    setValue("day", DAY_FORMATTER.format(hour.timestamp), { parent: elm });
+    setValue("time", HOUR_FORMATTER.format(hour.timestamp), { parent: elm });
+    elm.querySelector("[data-icon]").src = getIconURL(hour.iconCode);
+    hourTableSection.append(elm);
+  });
+}
