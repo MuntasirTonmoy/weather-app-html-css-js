@@ -1,6 +1,8 @@
 import { ICON_MAP } from "./iconMap";
 import { getWeather } from "./weather";
 
+navigator.geolocation.getCurrentPosition();
+
 getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
   .then(renderWeather)
   .catch(error => {
