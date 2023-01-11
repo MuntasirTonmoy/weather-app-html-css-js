@@ -6,3 +6,10 @@ getWeather(10, 10, Intl.DateTimeFormat().resolvedOptions().timeZone)
     console.error(error);
     alert("Error getting weather");
   });
+
+function renderWeather({ current, daily, hourly }) {
+  renderCurrentWeather(current);
+  document.body.classList.remove("blurred");
+}
+
+function renderCurrentWeather() {}

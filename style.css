@@ -15,7 +15,7 @@ body {
   font-family: sans-serif;
 }
 
-.blured {
+.blurred {
   filter: blur(0.1875rem);
   overflow: hidden;
 }
