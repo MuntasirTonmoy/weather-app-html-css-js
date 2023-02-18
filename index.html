@@ -13,21 +13,63 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="container-xxl blurred">
+  <body class="container-xxl">
     <h1 class="text-center py-3">Weather Now</h1>
-    <section class="row">
-      <div class="col bg-info">
-        <div class="col">
-          <img
-            src="icons/sun.svg"
-            alt="sun"
-            class="weather-icon large"
-            data-current-icon
-          />
+
+    <div>
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <img
+          src="icons/sun.svg"
+          alt="sun"
+          class="weather-icon large mb-3"
+          data-current-icon
+        />
+        <p>Mostly sunny</p>
+        <div>
+          <h1 class="fw-bold display-1">20 &deg;C</h1>
         </div>
       </div>
-      <div class="col">abc</div>
-    </section>
+      <hr />
+      <div class="header-right">
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">High</div>
+          <div><span data-current-high>32</span>&deg;</div>
+        </div>
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">FL High</div>
+          <div><span data-current-fl-high>27</span>&deg;</div>
+        </div>
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">Wind</div>
+          <div>
+            <span data-current-wind>9</span
+            ><span class="value-sub-info">mph</span>
+          </div>
+        </div>
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">Low</div>
+          <div><span data-current-low>19</span>&deg;</div>
+        </div>
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">FL Low</div>
+          <div><span data-current-fl-low>12</span>&deg;</div>
+        </div>
+        <!-- info -->
+        <div class="info-group">
+          <div class="label">Precip</div>
+          <div>
+            <span data-current-precip>0.1</span
+            ><span class="value-sub-info">in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- class="blurred" -->
     <!--* Header section -->
     <header class="header">
