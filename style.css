@@ -123,9 +123,7 @@ body {
   display: grid;
   gap: 1rem;
   grid-auto-flow: column;
+  grid-auto-columns: 23%;
   overflow-x: scroll;
-}
-
-.day-container::-webkit-scrollbar {
-  display: none;
+  overscroll-behavior-x: contain;
 }
