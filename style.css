@@ -87,6 +87,10 @@ body {
   padding: 1rem;
 }
 
+.hour-data {
+  height: 80vh;
+}
+
 .day-card {
   padding: 1rem;
   border: 0.0625rem solid hsl(200, 100%, 10%);
